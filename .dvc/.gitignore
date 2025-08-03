@@ -2,3 +2,21 @@
 /tmp
 /cache
 /artifacts/
+# Virtual Environment
+tf_env/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# DVC and large files
+artifacts/
+.dvc/
+*.dvc
