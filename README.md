@@ -55,9 +55,74 @@ A Flask web application provides a simple user interface.
 Users can upload an MRI scan.
 
 The application uses a dedicated prediction component to load the model, preprocess the image, and return a prediction with class probabilities.
+## Project Structure
+```
+Alzheimers_Detection_Model/
+│
+├── .dvc/               # DVC's internal tracking folder
+├── .git/               # Git's internal tracking folder
+├── artifacts/          # Stores all output files (data, models)
+│   ├── data_ingestion/
+│   ├── data_transformation/
+│   ├── model_evaluation/
+│   ├── model_training/
+│   └── prepare_base_model/
+│
+├── config/             # Contains configuration files
+│   └── config.yaml
+│
+├── logs/               # Stores log files from pipeline runs
+│
+├── src/                # Main source code package
+│   └── alzheimer_classifier/
+│       ├── __init__.py
+│       ├── components/ # Core logic for each pipeline step
+│       │   ├── __init__.py
+│       │   ├── data_ingestion.py
+│       │   ├── data_transformation.py
+│       │   ├── model_evaluation.py
+│       │   ├── model_training.py
+│       │   ├── prepare_base_model.py
+│       │   └── prediction.py
+│       ├── config/     # Configuration manager
+│       │   └── configuration.py
+│       ├── constants/  # Project constants
+│       │   └── __init__.py
+│       ├── entity/     # Data entity definitions
+│       │   └── config_entity.py
+│       ├── pipeline/   # Scripts to orchestrate each stage
+│       │   ├── __init__.py
+│       │   ├── stage_01_data_ingestion.py
+│       │   ├── stage_02_data_transformation.py
+│       │   ├── stage_03_prepare_base_model.py
+│       │   ├── stage_04_model_training.py
+│       │   └── stage_05_model_evaluation.py
+│       └── utils/      # Utility functions
+│           └── common.py
+│
+├── static/             # Stores static files for the web app (e.g., uploads)
+│   └── uploads/
+│
+├── templates/          # Contains HTML files for the web app
+│   └── index.html
+│
+├── tf_env/             # Your Python virtual environment
+│
+├── .gitignore          # Tells Git which files to ignore
+├── app.py              # The Flask web application server
+├── dvc.yaml            # The DVC pipeline definition file
+├── main.py             # Manual script to run the full training pipeline
+├── params.yaml         # Hyperparameters for the model
+├── README.md           # Project documentation
+├── requirements.txt    # List of Python dependencies
+└── setup.py            # Makes the 'src' code installable
+```
 
 ## Sample Output
 The final output is a clean web interface where a user can upload an MRI image and receive a classification. The result displays the predicted class, the probabilities for both "Normal" and "Alzheimer's", and shows the uploaded image.
+
+Input image-![input](input.jpg)
+Output image-![output](output.png)
 
 ## Installation and Setup Guide
 Follow these steps to set up and run the project locally.
