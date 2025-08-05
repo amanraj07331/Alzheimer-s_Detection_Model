@@ -118,7 +118,7 @@ Alzheimers_Detection_Model/
 └── setup.py            # Makes the 'src' code installable
 ```
 ## Confusion Matrix
-metrics image-![confusion_metrics](confusion matrix.png)
+metrics image-![confusion_metrics](confusion-matrix.png)
 
 
 ## Sample Output
