@@ -117,6 +117,9 @@ Alzheimers_Detection_Model/
 ├── requirements.txt    # List of Python dependencies
 └── setup.py            # Makes the 'src' code installable
 ```
+## Confusion Matrix
+metrics image-![confusion_metrics](confusion_metrics.png)
+
 
 ## Sample Output
 The final output is a clean web interface where a user can upload an MRI image and receive a classification. The result displays the predicted class, the probabilities for both "Normal" and "Alzheimer's", and shows the uploaded image.
